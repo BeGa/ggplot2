@@ -92,7 +92,7 @@ StatBoxplot <- ggproto("StatBoxplot", Stat,
 
     df$x <- if (is.factor(data$x)) data$x[1] else mean(range(data$x))
     df$width <- width
-    df$relvarwidth <- sqrt(n)
+    df$relvarwidth <- df$x/n
     df
   }
 )
