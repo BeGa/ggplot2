@@ -147,7 +147,7 @@ GeomBoxplot <- ggproto("GeomBoxplot", Geom,
       data$xmax <- data$x + data$width / 2
     } else {
       # make `relvarwidth` relative to the size of the largest group
-      data$relvarwidth <- data$relvarwidth / length(data$relvarwidth)
+      data$relvarwidth <- data$relvarwidth / max(data$relvarwidth)
       data$xmin <- data$x - data$relvarwidth * data$width / 2
       data$xmax <- data$x + data$relvarwidth * data$width / 2
     }
